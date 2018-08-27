@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+    <title>诚信驾校 预约系统</title>
+    {% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" /> 
+</head>
+
+<body>
+    <div class="main">
+    	<div class="mainin">
+        	<h1><img src="{% static 'images/ht_name.png' %}"></h1>
+            <div class="mainin1">
+				<form action="/bus_result/{{pid}}" method="get">
+    				<ul>
+					<label id="lblSelect">
+            		<select id="selectPointOfInterest" title="Select points of interest nearby" name="route">
+					<option value="1">西橡方向</option>
+					<option value="2">文林路方向</option>
+					</select>
+					<br>
+			    	<input type="submit" class="tijiao" value="提交">
+			    	</label>
+			    	</ul>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

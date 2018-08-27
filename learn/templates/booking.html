@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+    <title>诚信驾校 预约系统</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" /> 
+	<style>
+		table.dataintable {
+		  margin-top:15px;
+		  border-collapse:collapse;
+		  border:1px solid #aaa;
+		  width:100%;
+		}
+		table.dataintable th {
+		  vertical-align:baseline;
+		  padding:5px 15px 5px 6px;
+		  background-color:#3F3F3F;
+		  border:1px solid #3F3F3F;
+		  text-align:left;
+		  color:#fff;
+		}
+		table.dataintable td {
+		  vertical-align:text-top;
+		  padding:6px 15px 6px 6px;
+		  border:1px solid #aaa;
+		}
+		table.dataintable tr:nth-child(odd) {
+		  background-color:#F5F5F5;
+		}
+		table.dataintable tr:nth-child(even) {
+		  background-color:#fff;
+		}
+	</style>
+</head>
+
+<body>
+<div class="main">
+	<div class="mainin">
+    	<h1><img src="{% static 'images/ht_name.png' %}"></h1>
+		<table border="1" class="dataintable">
+		{% for name,num in coach_list.items %}
+			{% for class in num.num%}
+				<tr>
+				<td>{{ name }} 教练</td>
+					
+				<td>
+					{% if forloop.counter0 == 0 %}上午  8 至 10 点
+					{% elif forloop.counter0 == 1 %}上午 10 至 12 点
+					{% elif forloop.counter0 == 2 %}下午  2 至  4 点
+					{% elif forloop.counter0 == 3 %}下午  4 至  6 点
+					{% endif %}
+				</td>
+					
+				<td>
+					余额 {{ class }}
+				</td>
+					
+				<td>
+					{% if class >= 1 %}
+					<a href="/booking_result?pid={{pid}}&cid={{num.cid}}&group={{group}}&class={{forloop.counter}}" >预约</a>
+					{% else %}
+					已满
+					{% endif %}
+				</td>
+				</tr>
+			{% endfor %}
+		{% empty %}
+			<td>{{group}} 组无剩余预约名额</td>
+		{% endfor %}
+		</table>
+	</div>
+</div>
+</body>
+
+</html>

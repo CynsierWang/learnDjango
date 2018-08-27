@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+    <title>诚信驾校 预约系统</title>
+    {% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" /> 
+</head>
+
+<body>
+    <div class="main">
+    	<div class="mainin">
+        	<h1><img src="{% static 'images/ht_name.png' %}"></h1>
+            <div class="mainin1">
+				<form action="/check_result" method="get">
+				<ul>
+				<label id="lblSelect">
+	            	<select id="selectPointOfInterest" title="Select points of interest nearby" name="group">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					</select>
+		    		<li><input type="submit" class="tijiao" value="查看预约结果"></li>
+		    	</label>
+				</ul>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

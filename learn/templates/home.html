@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+    <title>诚信驾校 预约系统</title>
+    {% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" /> 
+</head>
+
+<body>
+    <div class="main">
+    	<div class="mainin">
+    		<h1><img src="{% static 'images/ht_name.png' %}"></h1>
+            <div class="mainin1">
+        	<br>
+			{{content}}
+			<br>
+			<a href="{{url}}">{{dis}}</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>修改工作时段</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+	<style type="text/css">
+		.main{
+		    text-align: center; /*让div内部文字居中*/
+		    background-color: #fff;
+		    border-radius: 20px;
+		    width: 300px;
+		    height: 350px;
+		    margin: auto;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    right: 0;
+		    bottom: 0;
+		}
+	</style>
+</head>
+
+<body bgcolor="#E6E6FA">
+<div class="main">
+	<img src="/static/learn/cx.jpg"><br>
+	当前选择的是
+	<br>
+	{{content}}
+	<br>
+	<br>
+	调整勾选来改变可预约时段:
+	<br>
+<form action="{% url 'adjust_result' cid%}" method="get">
+	上午8至10点<input type="checkbox" name="duty1" value="c1" checked><br>
+    上午10至12点<input type="checkbox" name="duty2" value="c2" checked><br>
+    下午2至4点<input type="checkbox" name="duty3" value="c3" checked><br>
+    下午4至6点<input type="checkbox" name="duty4" value="c4" checked><br>
+    休假<input type="checkbox" name="dayoff" value="false"><br>
+    <input type="submit" value="提交">
+</form>
+</div>
+</body>
+
+</html>

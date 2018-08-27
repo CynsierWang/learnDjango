@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+    <title>诚信驾校 预约系统</title>
+    {% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" /> 
+</head>
+
+<body>
+    <div class="main">
+    	<div class="mainin">
+        	<h1><img src="{% static 'images/ht_name.png' %}"></h1>
+            <div class="mainin1">
+	<form action="/booking" method="get">
+		<ul>
+			<li><span><br></span><input name="name" type="text" id="loginName" placeholder="姓名" class="SearchKeyword"></li>
+			
+			<label id="lblSelect">
+            <select id="selectPointOfInterest" title="Select points of interest nearby" name="group">
+                <option value="1">1组</option>
+                <option value="2">2组</option>
+                <option value="3">3组</option>
+                <option value="4">4组</option>
+                <option value="5">5组</option>
+                <option value="6">6组</option>
+            </select>
+        	</label>
+            <li><button class="tijiao" type="submit">约练车</button></li>
+        </ul>
+    </form>
+</div>
+</div>
+</div>
+</body>
+
+</html>
